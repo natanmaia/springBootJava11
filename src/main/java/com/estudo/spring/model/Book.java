@@ -1,17 +1,26 @@
 package com.estudo.spring.model;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Book {
+@Entity
+public class Book implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String tittle;
     private String author;
     private String text;
 
+    @ManyToOne
+    @JoinColumn(name = "id_category")
     private Category category;
 
-    public Book(){
+    public Book() {
         super();
     }
 

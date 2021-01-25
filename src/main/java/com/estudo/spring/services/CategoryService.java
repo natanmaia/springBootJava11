@@ -37,4 +37,9 @@ public class CategoryService {
 
         return categoryRepository.save(category);
     }
+
+    public void delete(Integer id) {
+        findById(id);
+        categoryRepository.deleteById(id);
+    }
 }

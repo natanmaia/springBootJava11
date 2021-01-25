@@ -1,4 +1,4 @@
-package com.estudo.spring.services;
+package com.estudo.spring.services.db;
 
 import com.estudo.spring.models.Book;
 import com.estudo.spring.models.Category;

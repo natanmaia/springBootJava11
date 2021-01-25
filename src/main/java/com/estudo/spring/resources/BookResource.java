@@ -1,9 +1,6 @@
 package com.estudo.spring.resources;
 
 import com.estudo.spring.dtos.BookDTO;
-import com.estudo.spring.dtos.BookDTO;
-import com.estudo.spring.models.Book;
-import com.estudo.spring.models.Book;
 import com.estudo.spring.models.Book;
 import com.estudo.spring.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;

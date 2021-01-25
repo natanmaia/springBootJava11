@@ -1,6 +1,6 @@
 package com.estudo.spring.configs;
 
-import com.estudo.spring.services.DBService;
+import com.estudo.spring.services.db.DBService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

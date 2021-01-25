@@ -4,6 +4,7 @@ import com.estudo.spring.dtos.BookDTO;
 import com.estudo.spring.models.Book;
 import com.estudo.spring.repositories.BookRepository;
 import com.estudo.spring.repositories.CategoryRepository;
+import com.estudo.spring.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

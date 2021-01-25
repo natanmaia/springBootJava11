@@ -1,8 +1,9 @@
 package com.estudo.spring.services;
 
-import com.estudo.spring.models.Book;
+import com.estudo.spring.dtos.BookDTO;
 import com.estudo.spring.models.Book;
 import com.estudo.spring.repositories.BookRepository;
+import com.estudo.spring.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,9 @@ public class BookService {
 
     @Autowired
     private BookRepository bookRepository;
+    @Autowired
+    private CategoryRepository categoryRepository;
+
 
     public Book findById(Integer id){
         Optional<Book> book = bookRepository.findById(id);
@@ -26,6 +30,16 @@ public class BookService {
 
     public Book create(Book book){
         book.setId(null);
+        return bookRepository.save(book);
+    }
+
+    public Book update(Integer id, BookDTO bookDTO) {
+        Book book = findById(id);
+        book.setTittle(bookDTO.getTittle());
+        book.setAuthor(bookDTO.getAuthor());
+        book.setText(bookDTO.getText());
+        book.setCategory(categoryRepository.findById(bookDTO.getId_category()).get());
+
         return bookRepository.save(book);
     }
 }

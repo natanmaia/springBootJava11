@@ -1,6 +1,8 @@
 package com.estudo.spring.resources;
 
 import com.estudo.spring.dtos.BookDTO;
+import com.estudo.spring.dtos.BookDTO;
+import com.estudo.spring.models.Book;
 import com.estudo.spring.models.Book;
 import com.estudo.spring.models.Book;
 import com.estudo.spring.services.BookService;
@@ -40,5 +42,12 @@ public class BookResource {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(book.getId()).toUri();
 
         return ResponseEntity.created(uri).body(book);
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<BookDTO> update(@PathVariable Integer id, @RequestBody BookDTO bookDTO){
+        Book book = bookService.update(id, bookDTO);
+
+        return ResponseEntity.ok().body(new BookDTO(book));
     }
 }

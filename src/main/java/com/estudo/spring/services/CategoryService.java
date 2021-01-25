@@ -1,9 +1,11 @@
 package com.estudo.spring.services;
 
+import com.estudo.spring.dtos.CategoryDTO;
 import com.estudo.spring.models.Category;
 import com.estudo.spring.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.yaml.snakeyaml.emitter.ScalarAnalysis;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,6 +27,14 @@ public class CategoryService {
 
     public Category create(Category category){
         category.setId(null);
+        return categoryRepository.save(category);
+    }
+
+    public Category update(Integer id, CategoryDTO categoryDTO) {
+        Category category = findById(id);
+        category.setName(categoryDTO.getName());
+        category.setDescription(categoryDTO.getDescription());
+
         return categoryRepository.save(category);
     }
 }

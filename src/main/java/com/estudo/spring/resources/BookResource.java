@@ -50,4 +50,12 @@ public class BookResource {
 
         return ResponseEntity.ok().body(new BookDTO(book));
     }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Integer id){
+        bookService.delete(id);
+
+        return ResponseEntity.noContent().build();
+
+    }
 }

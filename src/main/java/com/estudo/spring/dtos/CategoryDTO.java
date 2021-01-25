@@ -1,6 +1,6 @@
-package com.estudo.spring.dto;
+package com.estudo.spring.dtos;
 
-import com.estudo.spring.model.Category;
+import com.estudo.spring.models.Category;
 
 import java.io.Serializable;
 

@@ -1,8 +1,7 @@
-package com.estudo.spring.service;
+package com.estudo.spring.services;
 
-import com.estudo.spring.model.Book;
-import com.estudo.spring.model.Category;
-import com.estudo.spring.repository.BookRepository;
+import com.estudo.spring.models.Book;
+import com.estudo.spring.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

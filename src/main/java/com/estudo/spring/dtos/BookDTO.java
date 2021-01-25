@@ -1,6 +1,6 @@
-package com.estudo.spring.dto;
+package com.estudo.spring.dtos;
 
-import com.estudo.spring.model.Book;
+import com.estudo.spring.models.Book;
 import java.io.Serializable;
 
 public class BookDTO implements Serializable {

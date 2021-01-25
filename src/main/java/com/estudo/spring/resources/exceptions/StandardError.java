@@ -1,4 +1,4 @@
-package com.estudo.spring.resource.exception;
+package com.estudo.spring.resources.exceptions;
 
 public class StandardError {
 

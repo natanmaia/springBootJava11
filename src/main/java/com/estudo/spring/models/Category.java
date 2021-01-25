@@ -1,4 +1,4 @@
-package com.estudo.spring.model;
+package com.estudo.spring.models;
 
 import javax.persistence.*;
 import java.io.Serializable;

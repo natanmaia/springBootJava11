@@ -1,8 +1,8 @@
-package com.estudo.spring.resource;
+package com.estudo.spring.resources;
 
-import com.estudo.spring.dto.CategoryDTO;
-import com.estudo.spring.model.Category;
-import com.estudo.spring.service.CategoryService;
+import com.estudo.spring.dtos.CategoryDTO;
+import com.estudo.spring.models.Category;
+import com.estudo.spring.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

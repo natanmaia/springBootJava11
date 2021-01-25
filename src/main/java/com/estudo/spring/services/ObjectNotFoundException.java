@@ -1,4 +1,4 @@
-package com.estudo.spring.service;
+package com.estudo.spring.services;
 
 public class ObjectNotFoundException extends RuntimeException{
 

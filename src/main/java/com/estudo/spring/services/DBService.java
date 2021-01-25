@@ -1,16 +1,16 @@
-package com.estudo.spring.service;
+package com.estudo.spring.services;
 
-import com.estudo.spring.model.Book;
-import com.estudo.spring.model.Category;
-import com.estudo.spring.repository.BookRepository;
-import com.estudo.spring.repository.CategoryRepository;
+import com.estudo.spring.models.Book;
+import com.estudo.spring.models.Category;
+import com.estudo.spring.repositories.BookRepository;
+import com.estudo.spring.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 
 @Service
-public class DBServiceTest {
+public class DBService {
 
     @Autowired
     private CategoryRepository categoryRepository;
@@ -18,7 +18,7 @@ public class DBServiceTest {
     @Autowired
     private BookRepository bookRepository;
 
-    public void criarBaseTeste(){
+    public void criarBase(){
         Category category = new Category(null, "informática", "Livros de TI");
         Category category2 = new Category(null, "Ciências", "Livros de Ficção Científica");
         Category category3 = new Category(null, "Biografias", "Livros de biografias");

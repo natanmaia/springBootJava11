@@ -1,9 +1,8 @@
-package com.estudo.spring.resource;
+package com.estudo.spring.resources;
 
-import com.estudo.spring.dto.BookDTO;
-import com.estudo.spring.model.Book;
-import com.estudo.spring.model.Book;
-import com.estudo.spring.service.BookService;
+import com.estudo.spring.dtos.BookDTO;
+import com.estudo.spring.models.Book;
+import com.estudo.spring.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

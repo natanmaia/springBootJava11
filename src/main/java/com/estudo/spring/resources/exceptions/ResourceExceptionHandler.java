@@ -1,6 +1,6 @@
-package com.estudo.spring.resource.exception;
+package com.estudo.spring.resources.exceptions;
 
-import com.estudo.spring.service.ObjectNotFoundException;
+import com.estudo.spring.services.ObjectNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

@@ -1,4 +1,4 @@
-package com.estudo.spring.model;
+package com.estudo.spring.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

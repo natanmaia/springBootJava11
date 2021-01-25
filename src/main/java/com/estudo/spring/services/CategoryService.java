@@ -22,4 +22,9 @@ public class CategoryService {
     public List<Category> findAll(){
         return categoryRepository.findAll();
     }
+
+    public Category create(Category category){
+        category.setId(null);
+        return categoryRepository.save(category);
+    }
 }

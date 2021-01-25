@@ -15,6 +15,6 @@ public class CategoryService {
 
     public Category findById(Integer id){
         Optional<Category>  category = categoryRepository.findById(id);
-        return category.orElse(null);
+        return category.orElseThrow(() -> new ObjectNotFoundException("Categoria não encontrada! Id:" + id ));
     }
 }

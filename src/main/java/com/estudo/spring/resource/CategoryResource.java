@@ -1,4 +1,4 @@
-package com.estudo.spring.Resource;
+package com.estudo.spring.resource;
 
 import com.estudo.spring.model.Category;
 import com.estudo.spring.service.CategoryService;

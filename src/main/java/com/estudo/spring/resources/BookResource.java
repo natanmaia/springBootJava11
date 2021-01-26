@@ -50,10 +50,10 @@ public class BookResource {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<BookDTO> update(@PathVariable Integer id, @RequestBody BookDTO bookDTO){
-        Book book = bookService.update(id, bookDTO);
+    public ResponseEntity<Book> update(@PathVariable Integer id, @RequestBody Book book){
+        Book editBook = bookService.update(id, book);
 
-        return ResponseEntity.ok().body(new BookDTO(book));
+        return ResponseEntity.ok().body(editBook);
     }
 
     @DeleteMapping(value = "/{id}")

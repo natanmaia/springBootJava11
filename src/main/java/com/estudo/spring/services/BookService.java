@@ -42,14 +42,16 @@ public class BookService {
         return bookRepository.save(book);
     }
 
-    public Book update(Integer id, BookDTO bookDTO) {
-        Book book = findById(id);
-        book.setTittle(bookDTO.getTittle());
-        book.setAuthor(bookDTO.getAuthor());
-        book.setText(bookDTO.getText());
-        book.setCategory(categoryRepository.findById(bookDTO.getId_category()).get());
+    public Book update(Integer id, Book book) {
+        Book editBook = findById(id);
+        updateData(editBook, book);
+        return bookRepository.save(editBook);
+    }
 
-        return bookRepository.save(book);
+    private void updateData(Book editBook, Book book) {
+        editBook.setTittle(book.getTittle());
+        editBook.setAuthor(book.getAuthor());
+        editBook.setText(book.getText());
     }
 
     public void delete(Integer id) {

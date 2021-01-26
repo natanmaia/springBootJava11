@@ -16,9 +16,12 @@ public class BookService {
 
     @Autowired
     private BookRepository bookRepository;
+
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @Autowired
+    private CategoryService categoryService;
 
     public Book findById(Integer id){
         Optional<Book> book = bookRepository.findById(id);
@@ -27,6 +30,11 @@ public class BookService {
 
     public List<Book> findAll(){
         return bookRepository.findAll();
+    }
+
+    public List<Book> findByCategory(Integer id_category){
+        categoryService.findById(id_category);
+        return bookRepository.findByCategory(id_category);
     }
 
     public Book create(Book book){

@@ -33,6 +33,14 @@ public class BookResource {
         return ResponseEntity.ok().body(bookDTOS);
     }
 
+    @GetMapping(value = "/id_categoria/{id_category}")
+    public ResponseEntity<List<BookDTO>> findByCategory(@PathVariable Integer id_category){
+        List<Book> books = bookService.findByCategory(id_category);
+        List<BookDTO> bookDTOS = books.stream().map(BookDTO::new).collect(Collectors.toList());
+
+        return ResponseEntity.ok().body(bookDTOS);
+    }
+
     @PostMapping
     public ResponseEntity<Book> create(@RequestBody Book book){
         book = bookService.create(book);

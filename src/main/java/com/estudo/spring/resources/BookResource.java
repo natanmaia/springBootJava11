@@ -56,6 +56,13 @@ public class BookResource {
         return ResponseEntity.ok().body(editBook);
     }
 
+    @PatchMapping(value = "/{id}")
+    public ResponseEntity<Book> updatePatch(@PathVariable Integer id, @RequestBody Book book){
+        Book editBook = bookService.update(id, book);
+
+        return ResponseEntity.ok().body(editBook);
+    }
+
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> delete(@PathVariable Integer id){
         bookService.delete(id);

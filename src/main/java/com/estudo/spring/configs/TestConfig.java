@@ -14,7 +14,7 @@ public class TestConfig {
     private DBServiceTest dbServiceTest;
 
     @Bean
-    public void criarBaseTeste(){
+    public void criarBaseTeste() {
         this.dbServiceTest.criarBaseTeste();
     }
 }

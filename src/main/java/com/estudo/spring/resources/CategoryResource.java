@@ -20,13 +20,13 @@ public class CategoryResource {
     private CategoryService categoryService;
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Category> findById(@PathVariable Integer id){
+    public ResponseEntity<Category> findById(@PathVariable Integer id) {
         Category category = categoryService.findById(id);
         return ResponseEntity.ok().body(category);
     }
 
     @GetMapping
-    public ResponseEntity<List<CategoryDTO>> findAll(){
+    public ResponseEntity<List<CategoryDTO>> findAll() {
         List<Category> categories = categoryService.findAll();
         List<CategoryDTO> categoryDTOS = categories.stream().map(CategoryDTO::new).collect(Collectors.toList());
 
@@ -34,7 +34,7 @@ public class CategoryResource {
     }
 
     @PostMapping
-    public ResponseEntity<Category> create(@RequestBody Category category){
+    public ResponseEntity<Category> create(@RequestBody Category category) {
         category = categoryService.create(category);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(category.getId()).toUri();
 
@@ -42,14 +42,14 @@ public class CategoryResource {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<CategoryDTO> update(@PathVariable Integer id, @RequestBody CategoryDTO categoryDTO){
+    public ResponseEntity<CategoryDTO> update(@PathVariable Integer id, @RequestBody CategoryDTO categoryDTO) {
         Category category = categoryService.update(id, categoryDTO);
 
         return ResponseEntity.ok().body(new CategoryDTO(category));
     }
 
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id){
+    public ResponseEntity<Void> delete(@PathVariable Integer id) {
         categoryService.delete(id);
 
         return ResponseEntity.noContent().build();

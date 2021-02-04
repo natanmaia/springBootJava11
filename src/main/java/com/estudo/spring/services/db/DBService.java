@@ -18,7 +18,7 @@ public class DBService {
     @Autowired
     private BookRepository bookRepository;
 
-    public void criarBase(){
+    public void criarBase() {
         Category category = new Category(null, "informática", "Livros de TI");
         Category category2 = new Category(null, "Ciências", "Livros de Ficção Científica");
         Category category3 = new Category(null, "Biografias", "Livros de biografias");

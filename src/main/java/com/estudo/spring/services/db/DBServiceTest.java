@@ -18,7 +18,7 @@ public class DBServiceTest {
     @Autowired
     private BookRepository bookRepository;
 
-    public void criarBaseTeste(){
+    public void criarBaseTeste() {
         Category category = new Category(null, "informática", "Livros de TI");
         Category category2 = new Category(null, "Ciências", "Livros de Ficção Científica");
         Category category3 = new Category(null, "Biografias", "Livros de biografias");

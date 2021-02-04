@@ -23,21 +23,21 @@ public class BookService {
     @Autowired
     private CategoryService categoryService;
 
-    public Book findById(Integer id){
+    public Book findById(Integer id) {
         Optional<Book> book = bookRepository.findById(id);
         return book.orElseThrow(() -> new ObjectNotFoundException("Livro não encontrado! Id: " + id));
     }
 
-    public List<Book> findAll(){
+    public List<Book> findAll() {
         return bookRepository.findAll();
     }
 
-    public List<Book> findByCategory(Integer id_category){
+    public List<Book> findByCategory(Integer id_category) {
         categoryService.findById(id_category);
         return bookRepository.findByCategory(id_category);
     }
 
-    public Book create(Book book){
+    public Book create(Book book) {
         book.setId(null);
         return bookRepository.save(book);
     }

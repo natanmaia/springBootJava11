@@ -43,7 +43,7 @@ public class CategoryService {
         findById(id);
         try {
             categoryRepository.deleteById(id);
-        } catch (org.springframework.dao.DataIntegrityViolationException e){
+        } catch (org.springframework.dao.DataIntegrityViolationException e) {
             throw new DataIntegrityViolationException("Categoria não pode ser deletada, possui livros associados!");
         }
     }
